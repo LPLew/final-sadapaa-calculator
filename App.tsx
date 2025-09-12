@@ -1,5 +1,3 @@
-
-
 import React, { useState, useEffect } from 'react';
 import { Calculator } from 'lucide-react';
 import { BigNumberProCalculator } from './components/ThomsonCalculator';
@@ -7,6 +5,7 @@ import { NotesView } from './components/NotesView';
 import FinancialCalculator from './components/FinancialCalculator';
 import { FinancialTranslationProvider } from './contexts/FinancialTranslationContext';
 import { FinancialHistoryProvider } from './contexts/FinancialHistoryContext'; // New
+import { HashRouter } from 'react-router-dom';
 
 type View = 'calculator' | 'financial' | 'notes';
 
@@ -80,4 +79,10 @@ const App: React.FC = () => {
   );
 };
 
-export default App;
+const Root: React.FC = () => (
+  <HashRouter>
+    <App />
+  </HashRouter>
+);
+
+export default Root;

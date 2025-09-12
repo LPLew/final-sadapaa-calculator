@@ -11,7 +11,7 @@ const InputWithSuffix: React.FC<{
     label: string;
     value: string;
     onChange: (v: string) => void;
-    onSuffixClick: () =&gt; void;
+    onSuffixClick: () => void;
     placeholder: string;
 }> = ({ label, value, onChange, onSuffixClick, placeholder }) => (
     <div>
