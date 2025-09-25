@@ -1,0 +1,98 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* Custom scrollbar styles */
+.custom-scrollbar-tape::-webkit-scrollbar {
+  width: 8px;
+}
+
+.custom-scrollbar-tape::-webkit-scrollbar-track {
+  background: #374151;
+  border-radius: 4px;
+}
+
+.custom-scrollbar-tape::-webkit-scrollbar-thumb {
+  background: #6B7280;
+  border-radius: 4px;
+}
+
+.custom-scrollbar-tape::-webkit-scrollbar-thumb:hover {
+  background: #9CA3AF;
+}
+
+/* Firefox scrollbar */
+.custom-scrollbar-tape {
+  scrollbar-width: thin;
+  scrollbar-color: #6B7280 #374151;
+}
+
+/* Ensure proper text rendering */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Prevent text selection on buttons */
+button {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Improve touch targets on mobile */
+@media (max-width: 768px) {
+  button {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* Animation classes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Responsive text sizing */
+@media (max-width: 640px) {
+  .text-4xl {
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .bg-gray-900 {
+    background-color: #000000;
+  }
+  
+  .bg-gray-800 {
+    background-color: #1a1a1a;
+  }
+  
+  .text-white {
+    color: #ffffff;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
